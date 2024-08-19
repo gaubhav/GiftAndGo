@@ -12,4 +12,4 @@ Google and not GCP, so my assumption is it would be Microsoft for Azure and Amaz
 - I haven't added the validation for the format of the ID field in the file. We can optionally add a regex validation for this field.
 - Command to cal the endpoint curl -X POST http://127.0.0.1:9090/api/files/process -H "X-FORWARDED-FOR: 24.48.0.1" -F "file=@EntryFile.txt". Make sure you run the curl command from the path where the EntryFile exists or give the full path of the input file.
 
-NOTE: The header X-FORWARDED-FOR is optional(If you want to test for a specific IP address). Else if will get the IP address from the request object which in our case will be the localhost IP because I am making the curl call from localhost
+NOTE: The header X-FORWARDED-FOR is optional(If you want to test for a specific IP address). Else the code will get the IP address from the request object which in our case will be the localhost IP because I am making the curl call from localhost
