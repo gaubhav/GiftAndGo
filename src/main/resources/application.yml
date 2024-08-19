@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:fileprocessordb
+    driver-class-name: org.h2.Driver
+    username: root
+    password: root
+    platform: h2
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+application:
+  feature:
+    skipValidation: false
+  ip-validation-properties:
+    blocked-countries:
+      - CN
+      - ES
+      - US
+    blocked-isps:
+      - Amazon
+      - Google
+      - Microsoft
+logging.level.org.springframework.web: DEBUG
+server:
+  port: 9090
