@@ -10,3 +10,6 @@ Google and not GCP, so my assumption is it would be Microsoft for Azure and Amaz
 - I have used CountryCode to check for the country instead of countryName. 
 - Even when validation is disabled via the feature flag, since I need to parse the average and top speed into numbers, there will be validation when I call Double.parseDouble().
 - I haven't added the validation for the format of the ID field in the file. We can optionally add a regex validation for this field.
+- Command to cal the endpoint curl -X POST http://127.0.0.1:9090/api/files/process -H "X-FORWARDED-FOR: 24.48.0.1" -F "file=@EntryFile.txt". Nake sure you run the curl command from the path where the EntrFile exists or give the full path of the input file.
+
+NOTE: The header X-FORWARDED-FOR is optional(If you want to test for a specific IP address). Else if will get the IP address from the request object which in our case will be the localhost IP because I am making the curl call from localhost
